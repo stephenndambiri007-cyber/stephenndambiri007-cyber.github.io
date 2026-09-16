@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Ndambiri | Mechanical Engineer & AI Specialist</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+  .buttons a {
+    display: inline-block;
+    padding: 12px 30px;
+    margin: 0 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .btn-primary {
+    background: #00b894;
+    color: white;
+  }
+  .btn-primary:hover { background: #00a383; }
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  .btn-secondary:hover {
+    background: white;
+    color: #1a1a2e;
+  }
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+  }
+  h2 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #1a1a2e;
+    border-bottom: 4px solid #00b894;
+    display: inline-block;
+    padding-bottom: 8px;
+  }
+  .about p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .skill-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-top: 4px solid #00b894;
+  }
+  .skill-card h3 {
+    color: #1a1a2e;
+    margin-bottom: 12px;
+    font-size: 1.2em;
+  }
+  .skill-card p {
+    font-size: 0.95em;
+    color: #555;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  }
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: #eee;
+  }
+  .project-content {
+    padding: 22px;
+  }
+  .project-content h3 {
+    color: #1a1a2e;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  .project-content p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .tag {
+    background: #e8f8f3;
+    color: #00a383;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+  .project-link {
+    color: #00b894;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95em;
+  }
+  .project-link:hover { text-decoration: underline; }
+  .experience-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+    border-left: 5px solid #00b894;
+  }
+  .experience-item h3 {
+    color: #1a1a2e;
+    margin-bottom: 5px;
+  }
+  .experience-item .date {
+    color: #00b894;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+  }
+  .experience-item p {
+    font-size: 0.95em;
+    color: #555;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .contact-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+  .contact-card a {
+    color: #00b894;
+    text-decoration: none;
+    font-weight: bold;
+    word-break: break-all;
+  }
+  .contact-card a:hover { text-decoration: underline; }
+  .contact-card .icon { font-size: 2em; margin-bottom: 10px; }
+  footer {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9em;
+    opacity: 0.9;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 2em; }
+    header p { font-size: 1em; }
+    h2 { font-size: 1.6em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Stephen Ndambiri</h1>
+  <p>Mechanical Engineer | AI/ML Engineer | Data Annotation Specialist</p>
+  <div class="buttons">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#contact" class="btn-secondary">Contact Me</a>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <h2>About Me</h2>
+  <p>I combine engineering precision with production-grade AI systems. As a Mechanical & Production Engineering graduate, I bring rigorous analytical thinking and hands-on design experience — from FEA simulation and CAD modeling to prototype fabrication.</p>
+  <p>For over 3 years, I have worked as a freelance AI Training Specialist and ML Engineer, delivering 25+ client projects with a 100% on-time rate. My work spans LLM deployment, predictive modeling, computer vision, NLP, and large-scale data annotation across text, audio, image, and video.</p>
+  <p>I am passionate about solving real-world problems — whether that means designing a machine that recycles plastic waste or building an AI system that detects fraud in real time.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>CAD & Simulation</h3>
+      <p>SolidWorks, AutoCAD, Fusion 360, ANSYS (Structural & Thermal), Finite Element Analysis, MATLAB</p>
+    </div>
+    <div class="skill-card">
+      <h3>AI & Machine Learning</h3>
+      <p>TensorFlow, PyTorch, Scikit-learn, XGBoost, Hugging Face, LangChain, LlamaIndex, OpenCV</p>
+    </div>
+    <div class="skill-card">
+      <h3>Backend & Cloud</h3>
+      <p>Python (FastAPI, Django, Flask), AWS, GCP, Azure, Docker, Kubernetes, Terraform</p>
+    </div>
+    <div class="skill-card">
+      <h3>Data & MLOps</h3>
+      <p>MLflow, Kubeflow, Weights & Biases, PySpark, Kafka, Airflow, PostgreSQL, Snowflake</p>
+    </div>
+    <div class="skill-card">
+      <h3>AI Data Annotation</h3>
+      <p>Text, audio, image, and video annotation. Bounding boxes, segmentation, keypoints, transcription, sentiment analysis, NER</p>
+    </div>
+    <div class="skill-card">
+      <h3>Core Engineering</h3>
+      <p>Machine Design, Manufacturing Processes, Thermodynamics, Engineering Mathematics, Technical QA & Validation</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <img src="shredder-render.png" alt="Plastic Shredder">
+      <div class="project-content">
+        <h3>♻️ Plastic Waste Shredder & Melter</h3>
+        <p>Designed and built a manually operated shredder-melter to convert plastic waste into paver blocks. Includes full CAD modeling, hand calculations, fabrication, and testing.</p>
+        <div class="project-tags">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">Fabrication</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/plastic-shredder-melter" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600" alt="Fraud Detection">
+      <div class="project-content">
+        <h3>🔍 Real-Time Fraud Detection API</h3>
+        <p>XGBoost model deployed on AWS Lambda that reduced false positives by 65% and saved $32K/month for a FinTech client.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">AWS</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/fraud-detection-api" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Churn Dashboard">
+      <div class="project-content">
+        <h3>📊 Customer Churn Prediction</h3>
+        <p>PySpark pipeline and Random Forest classifier that retained 18% of at-risk customers and recovered $120K in revenue.</p>
+        <div class="project-tags">
+          <span class="tag">PySpark</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Snowflake</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/churn-prediction-dashboard" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600" alt="Healthcare LLM">
+      <div class="project-content">
+        <h3>🏥 HIPAA Document Summarizer</h3>
+        <p>Fine-tuned Mistral-7B deployed inside a VPC that cut clinical document review time from 12 minutes to 90 seconds.</p>
+        <div class="project-tags">
+          <span class="tag">Mistral-7B</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Django</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/hipaa-document-summarizer" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600" alt="Route Optimization">
+      <div class="project-content">
+        <h3>🚚 Route Optimization & Tracking</h3>
+        <p>Genetic algorithm for delivery routing that reduced driving distance by 22% and saved $8,400/week.</p>
+        <div class="project-tags">
+          <span class="tag">OR-Tools</span>
+          <span class="tag">GCP</span>
+          <span class="tag">Looker</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/route-optimization" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600" alt="Recommendation Engine">
+      <div class="project-content">
+        <h3>🎓 Personalized Learning Recommender</h3>
+        <p>Hybrid recommendation system in PyTorch that increased session time by 35% and cut churn from 40% to 27%.</p>
+        <div class="project-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">Redis</span>
+          <span class="tag">FastAPI</span>
+        </div>
+        <a href="https://github.com/stephenndambiri007-cyber/recommendation-engine" class="project-link" target="_blank">View Project →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="experience-item">
+    <h3>Freelance ML Engineer & AI Training Specialist</h3>
+    <p class="date">2021 – Present | Remote</p>
+    <p>Delivered 25+ client projects across FinTech, E-Commerce, Healthcare, Logistics, and EdTech. Built production AI systems and worked on data annotation across text, audio, image, and video for platforms including Remotasks, Outlier, Atlas, Appen, and Scale AI.</p>
+  </div>
+
+  <div class="experience-item">
+    <h3>Mechanical Engineering Intern — Rivatex East Africa Ltd</h3>
+    <p class="date">Apr 2025 – Jul 2025</p>
+    <p>Supported maintenance of textile manufacturing equipment (spinning, weaving, finishing). Performed preventive maintenance, troubleshooting, production support, and fabric inspection.</p>
+  </div>
+
+  <div class="experience-item">
+    <h3>Mechanical Engineering Intern — Kimunye Tea Factory (KTDA)</h3>
+    <p class="date">Apr 2024 – Jul 2024</p>
+    <p>Supported maintenance of tea-processing machinery (CTC machines, dryers, conveyors, sorting systems). Performed fault diagnosis, repair, production support, and quality control checks.</p>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="experience-item">
+    <h3>BEng Mechanical & Production Engineering</h3>
+    <p class="date">University of Eldoret | Expected April 2026</p>
+    <p>Relevant coursework: Finite Element Analysis, Thermodynamics, Machine Design, Manufacturing Processes, Engineering Mathematics, Computational Methods.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">📧</div>
+      <a href="mailto:stephenndambiri007@gmail.com">stephenndambiri007@gmail.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="icon">🔗</div>
+      <a href="https://www.linkedin.com/in/stephen-ndambiri-85a529437/" target="_blank">LinkedIn Profile</a>
+    </div>
+    <div class="contact-card">
+      <div class="icon">💻</div>
+      <a href="https://github.com/stephenndambiri007-cyber" target="_blank">GitHub Profile</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Stephen Ndambiri. Built with HTML & CSS.</p>
+</footer>
+
+</body>
+</html>
